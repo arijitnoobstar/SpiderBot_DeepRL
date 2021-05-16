@@ -1,6 +1,6 @@
 # **SpiderBot_DeepRL**
 Title: **Implementation of Single and Multi-Agent Deep Reinforcement Learning Algorithms for a Walking Spider Robot**
-Authors(s): Arijit Dasgupta, Chong Yu Quan
+Authors(s): [Arijit Dasgupta](https://github.com/arijitnoobstar), [Chong Yu Quan](https://github.com/mion666459)
 
 Welcome to our project! For this project, we aim to take our SpiderBot and make it walk using deep reinforcement learning. The code is written entirely in Python 3.7.7 and the following Python libraries are required for our code to work.
 
