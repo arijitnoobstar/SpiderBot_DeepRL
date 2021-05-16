@@ -52,31 +52,31 @@ Contains two saved models using DDPG. The FullyTrained Model (375 episodes) is a
 
 ## Source Code
 
-### ME5406_Environment.py
+### SpiderBot_Environment.py
 This file has the p_gym class. This uses pybullet and loads the plane environment (no obstacles) and the SpiderBot into the physics engine. The code allows an agent to retrieve state observations for a leg or whole SpiderBot and set a target velocity for joints in the SpiderBot. Finally, the code uses information from the physics engine to determine rewards for a time step.
 
-### ME5406_Neural_Network.py
+### SpiderBot_Neural_Network.py
 This file has the classes for the fully-connected neural networks used. The Tensorflow 2 API is used to develop the neural networks. Depending on the algorithm and number of SpiderBot legs, the neural networks are customised for them. There is all a call method to do a forward propagation through the neural network.
 
-### ME5406_Agent.py
+### SpiderBot_Agent.py
 This file is a long one, which has all the operations of the agent for all 5 algorithms. It initialises the neural networks based on the algorithm in the constructor. The class also has the functionality to update the target networks for DDPG & MAD3QN. Additionally, it has a long list of methods to apply gradients for each one of the algorithms. In these methods, the TensorFlow 2 computational graph and gradient tapes are used to help in backpropagating the loss function. Finally the class also has the functionality to save all models and load all models.
 
-### ME5406_Replay_Buffer.py
+### SpiderBot_Replay_Buffer.py
 This file contains the replay_buffer class that handles experience replay storage and operations like logging and sampling with a batch size.
 
-### ME5406_Walk.py
+### SpiderBot_Walk.py
 This file contains the walk function that is actually responsible for handling all training operations. This is where all the classes interact with each other. The episodes are looped through and the SpiderBot is trained. The training-related data is logged and saved as a csv into the Training_Logs folder while the best models are saved to the Saved_Models folder during training.
 
-### ME5406_Postprocessing.py
+### SpiderBot_Postprocessing.py
 This file handles the plotting post-processing operations that takes the CSV file from the Training_Logs folder and saves the plot into the Training_Plots folder.
 
 ## Main Code
 
-### ME5406_Train_Model.py
+### SpiderBot_Train_Model.py
 This file allows the user to set up the training session. In this file, the user can set 3 levels of configuration for training. The general config section has options for choosing algorithms, number of legs, target location, episodes etc. The Hyperparameters config section handles all hyperparameters of the entire training process. The reward structure config provides options for all the scalar rewards. The user must set all of these configs and run the file to train the SpiderBot. TIP: not using a GUI is faster for training, especially if you use a CUDA-enabled NVIDIA GPU.
 
-### ME5406_Validation.py
-This file allows the user to validate and test a trained model, specially made for the Professors and TAs of ME5406 to visualise our fully trained model.
+### SpiderBot_Validation.py
+This file allows the user to validate and test a trained model, specially made for the Professors and TAs of SpiderBot to visualise our fully trained model.
 
 ## How to train a model?
 
@@ -126,13 +126,13 @@ Finally, set up the configuration for the reward structure:
 
 Then run the python code
 
-    > python ME5406_Train_Model.py
+    > python SpiderBot_Train_Model.py
 
 ## How to Validate/Test our Models?
-To test the fully trained model, just run `ME5406_Validation.py`.
+To test the fully trained model, just run `SpiderBot_Validation.py`.
 
-    > python ME5406_Validation.py
-If you wish to run the other saved model, the partially trained one, you can open up `ME5406_Validation.py` and edit the `training_name` from `DDPG_FullyTrained` to `DDPG_PartiallyTrained` in the config section as shown:
+    > python SpiderBot_Validation.py
+If you wish to run the other saved model, the partially trained one, you can open up `SpiderBot_Validation.py` and edit the `training_name` from `DDPG_FullyTrained` to `DDPG_PartiallyTrained` in the config section as shown:
 
     #~~~~~~~~~~~~ VALIDATION CONFIG SETUP ~~~~~~~~~~~~#
     training_name = "DDPG_PartiallyTrained"
