@@ -80,7 +80,7 @@ This file allows the user to validate and test a trained model, specially made f
 
 ## How to train a model?
 
-Open up `SpiderBot_Train_Model.py` for editing. The most important parameter is `training_name` that you must define. This is unique to a particular training session and all saved models, logs and plots are based on this `training_name`. After that set up your General Config:
+Unzip the SpiderBot_URDFS.zip file into the same directory. Open up `SpiderBot_Train_Model.py` for editing. The most important parameter is `training_name` that you must define. This is unique to a particular training session and all saved models, logs and plots are based on this `training_name`. After that set up your General Config:
 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~ GENERAL CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
     training_name = "insert_training_name_here"
